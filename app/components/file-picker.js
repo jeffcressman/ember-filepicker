@@ -49,8 +49,6 @@ export default Ember.Component.extend({
               newFile.set('height', metadata.height);
               newFile.set('ready', true);
               newFile.save();
-
-              // self.destroy(); // why do we need these? Removes, the button, which we don't want.
             },
             function (FPError) {
               // unless dialog closed by user
