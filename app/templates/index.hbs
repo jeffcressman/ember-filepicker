@@ -1,0 +1,18 @@
+<!-- 'saveFile', is the primary action for the Component and when we call
+     this.sendAction() in the Component saveFile will bubble up to the Controller
+     for this Route or higher if the action is not defined -->
+{{file-picker serviceType="image" store=store action="saveFile"}}
+
+{{#if errors.length}}
+	<div class="errors">
+	  <h2>Errors</h2>
+	  <ul>
+	    {{#each error in errors}}
+	     <li>{{error}}</li>
+	    {{/each}}
+	  </ul>
+	  <button {{action clearErrors}}>Clear Errors</button>
+	</div>
+{{/if}}
+
+{{outlet}}

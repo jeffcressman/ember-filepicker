@@ -3,9 +3,11 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-filepicker',
+    firebase: 'https://ember-filepicker.firebaseio.com/',
+    filepickerAPIKey: 'ApRfoUR9WQTeOakqb4Y6Lz',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

@@ -1,8 +1,38 @@
 # Ember-filepicker
 
-This README outlines the details of collaborating on this Ember application.
+Sample application showing usage of filepicker.io and Firebase with Ember.
 
-A short introduction of this app could easily go here.
+## Setup
+
+```bash
+npm install --save-dev emberfire
+ember generate emberfire
+bower install filepicker --save
+npm install --save-dev ember-cli-bootstrap
+```
+
+Add `app.import('bower_components/filepicker/filepicker.min.js');` to `Brocfile.js`
+
+Remember to restart the ember-cli server, `ember serve`, after modifying `Brocfile.js` or installing packages via npm.
+
+Add `"filepicker"` to end of the `.jshintrc` `"predef"` section.
+
+Set the Filepicker API key in `app.js`
+
+```javascript
+filepicker.setKey(config.filepickerAPIKey);
+```
+
+Add the key to `config/environment.js`
+
+```javascript
+filepickerAPIKey: 'ApRfoUR9WQTeOakqb4Y6Lz',
+```
+
+## Questions
+
+* How do we create a controller?
+* Can we have model properties as functions that take parameters?
 
 ## Prerequisites
 
@@ -48,4 +78,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
