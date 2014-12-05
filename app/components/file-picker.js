@@ -24,10 +24,8 @@ export default Ember.Component.extend({
       });
       newFile.save();
 
-      // Bubble 'saveFile' up to the Controller
-      // Seems to make sense to send the record immediately. This will allow us to
-      // add the record to relationships even if its not fully populated yet.
-      self.sendAction('action', newFile);
+      // Bubble 'save' action up to the Controller
+      self.sendAction('save', newFile);
 
       filepicker.pick(
         {
@@ -41,7 +39,7 @@ export default Ember.Component.extend({
           newFile.set('size', Math.round((blob.size / 1024 + 0.00001) * 100) / 100);
           newFile.save();
 
-          // get image's width and height, then add to controller's content
+          // get image's width and height, then add to file
           filepicker.stat(blob,
             {width: true, height: true},
             function (metadata) {
@@ -60,9 +58,8 @@ export default Ember.Component.extend({
         },
         function (FPError) {
           // unless dialog closed by user
-          // This doesn't seem to be working, even if we allow a 101
           if (FPError.code !== 101) {
-            self.sendAction('uploadError', FPError.toString());
+            self.sendAction('error', FPError.toString());
           }
         }
       );

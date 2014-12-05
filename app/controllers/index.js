@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.ArrayController.extend({
 
   actions: {
-    saveFile: function(file){ // we're passing the record from the file-picker component
-      console.log('file bubbled up to controller!');
+    save: function(file){ // we're passing the record up from the file-picker component
+      this.set('uploadedImage', file);
     },
-    uploadError: function (msg) {
+    error: function (msg) {
       this.get('errors').pushObject(msg);
     },
     clearErrors: function () {

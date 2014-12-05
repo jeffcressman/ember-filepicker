@@ -2,6 +2,8 @@
 
 Sample application showing usage of filepicker.io and Firebase with Ember.
 
+Based on https://github.com/mminkoff/ember-ink-filepicker
+
 ## How This Application Was Built
 
 ```bash
